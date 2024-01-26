@@ -257,7 +257,7 @@ services:
 # device-virtual
 # device-modbus-rtu
 # device-modbus-tcp
-# device-opcua (edgex)
+# device-opcua
 #####################################################################
 
 # # device-rest
@@ -444,7 +444,7 @@ services:
 #     volumes: 
 #     - ./modbus:/custom-config
 
-# # device-opcua (edgex)
+# # device-opcua
 #   device-opcua:
 #     container_name: edgex-device-opcua
 #     depends_on:
@@ -487,6 +487,3 @@ volumes:
   consul-data: {}
   db-data: {}
   kuiper-data: {}
-  # device-opc-ua-data: {}
-  # license-data:
-  #       external: true

@@ -1,0 +1,33 @@
+[[DeviceList]]
+    Name = "Modbus-RTU"
+    ProfileName = "modbus-rtu-profile"
+    Description = "modbus-rtu"
+    labels = [ "temperature","modbus RTU" ]
+    [DeviceList.Protocols]
+        [DeviceList.Protocols.modbus-rtu]
+            #Address = "/tmp/slave"
+            #Port = "502"
+            Address = "/dev/ttyUSB0"
+            UnitID = "17"
+            BaudRate = "115200"
+            DataBits = "8"
+            StopBits = "1"
+            Parity = "N"
+            Timeout = "5"
+            IdleTimeout = "5"
+        [[DeviceList.AutoEvents]]
+        Interval = "1s"
+        OnChange = false
+        SourceName = "ObjTemp"
+        [[DeviceList.AutoEvents]]
+        Interval = "1s"
+        OnChange = false
+        SourceName = "AmbTemp"
+        #[[DeviceList.AutoEvents]]
+        #Interval = "10ms"
+        #OnChange = false
+        #SourceName = "AlarmMode"
+        #[[DeviceList.AutoEvents]]
+        #Interval = "10ms"
+        #OnChange = false
+        #SourceName = "temperature_example"

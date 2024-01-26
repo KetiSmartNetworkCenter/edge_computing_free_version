@@ -1,0 +1,71 @@
+# primaryTable : HOLDING_REGISTERS, INPUT_REGISTERS, COLIS, DISCRETES_INPUT
+# startingAddress : Zero-based, modbus_simulator starting address : 4004 -> profile staring address :4003
+# IS_BYTE_SWAP, IS_WORD_SWAP : to handle the different Modbus binary data, Support Int32, Uint32, Float32 
+# -> ex) {primaryTable: "INPUT_REGISTERS", "staringAddress":"4", "isByteSwap":"false", "isWordSwap":"true"}
+# RAW_TYPE: binary data read from Modbus device, valueType: data type that user want to receive
+# (only support In16, Unit16 for rawType, value type must be Float32 and Float64)
+
+#20230316 : HOLDING_REGISTERS -> 2Byte(16bit) ?
+
+name: "modbus-rtu-profile"
+manufacturer: "Audon Electronics"
+model: "Temperature"
+labels:
+  - "Web"
+  - "Modbus TCP"
+  - "SNMP"
+description: "The NANO_TEMP is a Ethernet Thermometer measuring from -55°C to 125°C with a web interface and Modbus TCP communications."
+
+deviceResources:
+  -
+    name: "ObjTemp"
+    isHidden: false
+    description: "Object Temperature"
+    attributes:
+      { primaryTable: "HOLDING_REGISTERS", startingAddress: 352 }
+    properties:
+      valueType: "Float32"
+      readWrite: "R"
+  -
+    name: "AmbTemp"
+    isHidden: false
+    description: "Ambient Temperature"
+    attributes:
+      { primaryTable: "HOLDING_REGISTERS", startingAddress: 354 }
+    properties:
+      valueType: "Float32"
+      readWrite: "R"
+  # -
+  #   name: "AlarmMode"
+  #   isHidden: false
+  #   description: "1 - OFF (disabled), 2 - Lower, 3 - Higher, 4 - Lower or Higher"
+  #   attributes:
+  #     { primaryTable: "HOLDING_REGISTERS", startingAddress: 4001 }
+  #   properties:
+  #     valueType: "Int16"
+  #     readWrite: "RW"
+  # -
+  #   name: "temperature_example"
+  #   isHidden: false
+  #   description: "Temperature x 10 (np. 10,5 st.C to 105)"
+  #   attributes:
+  #     { primaryTable: "HOLDING_REGISTERS", startingAddress: 4003, rawType: "Int16" }
+  #   properties:
+  #     valueType: "Float32"
+  #     readWrite: "R"
+  #     # scale: "0.1"
+  
+# deviceCommands:
+#   -
+#     name: "AlarmThreshold"
+#     readWrite: "RW"
+#     isHidden: false
+#     resourceOperations:
+#       - { deviceResource: "ThermostatL" }
+#       - { deviceResource: "ThermostatH" }
+#   -
+#     name: "AlarmMode"
+#     readWrite: "RW"
+#     isHidden: false
+#     resourceOperations:
+#       - { deviceResource: "AlarmMode", mappings: { "1":"OFF","2":"Lower","3":"Higher","4":"Lower or Higher"} }

@@ -1,0 +1,13 @@
+[Framework]
+    Version = "Jakarta"
+[CoreMetaData]
+    Host = "edgex-core-metadata"
+    Port = 59881
+[CoreCommand]
+    Host = "edgex-core-command"
+    Port = 59882
+[DataBase]
+    Protocol = "redis"
+    #Host = "redis-database"
+    Host = "device_management_database"
+    Port = 6379

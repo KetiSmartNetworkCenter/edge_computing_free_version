@@ -1,0 +1,53 @@
+name: "My-MQTT-Test-Device-Profile"
+manufacturer: "iot"
+model: "MQTT-DEVICE"
+description: "Test device profile"
+labels:
+  - "mqtt"
+  - "test"
+deviceResources:
+  -
+    name: TensorflowVal
+    isHidden: false
+    description: "tensorflow test value"
+    properties:
+      valueType: "Float64"
+      readWrite: "R"
+  -
+    name: PytorchVal
+    isHidden: false
+    description: "pytorch test value"
+    properties:
+      valueType: "Float64"
+      readWrite: "R"
+  -
+    name: distance
+    isHidden: false
+    description: "ultrasonic sensor value"
+    properties:
+      valueType: "Float64"
+      readWrite: "R"
+  -
+    name: temperature
+    isHidden: false
+    description: "temperature sensor value"
+    properties:
+      valueType: "Float64"
+      readWrite: "R"
+  -
+    name: humidity
+    isHidden: false
+    description: "humidity sensor value"
+    properties:
+      valueType: "Float64"
+      readWrite: "R"
+
+# deviceCommands:
+#   -
+#     name: values
+#     readWrite: "R"
+#     isHidden: false
+#     resourceOperations:
+#         - { deviceResource: "randnum" }
+#         - { deviceResource: "ping" }
+#         - { deviceResource: "message" }

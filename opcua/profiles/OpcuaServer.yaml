@@ -1,0 +1,135 @@
+name: "OPCUA-Server"
+manufacturer: "Prosys"
+model: "S1"
+labels:
+  - "OPCUA"
+  - "test"
+description: "Simulation results of OPCUA Server"
+deviceResources:
+  -
+    name: "edgex_nodeIdString_float"
+    description: "edgex_nodeIdString_float"
+    properties:
+      valueType: "Float64"
+      readWrite: "R"
+    attributes:
+      { nodeId: "ns=3;s=edgex_nodeidstring_float" }
+  -
+    name: "edgex_nodeIdString_int"
+    description: "edgex_nodeIdString_int"
+    properties:
+      valueType: "Int64"
+      readWrite: "R"
+    attributes:
+      { nodeId: "ns=3;s=edgex_nodeidstring_int" }
+  -
+    name: "edgex_nodeIdString_string"
+    description: "edgex_nodeIdString_string"
+    properties:
+      valueType: "String"
+      readWrite: "R"
+    attributes:
+      { nodeId: "ns=3;s=edgex_nodeidstring_string" }
+  -
+    name: "edgex_nodeIdNumeric_float"
+    description: "edgex_nodeIdNumeric_float"
+    properties:
+      valueType: "Float64"
+      readWrite: "R"
+    attributes:
+      { nodeId: "ns=3;i=1007" }
+  -
+    name: "edgex_nodeIdNumeric_int"
+    description: "edgex_nodeIdNumeric_int"
+    properties:
+      valueType: "Int64"
+      readWrite: "R"
+    attributes:
+      { nodeId: "ns=3;i=1008" }
+  -
+    name: "edgex_nodeIdNumeric_string"
+    description: "edgex_nodeIdNumeric_string"
+    properties:
+      valueType: "String"
+      readWrite: "R"
+    attributes:
+      { nodeId: "ns=3;i=1009" }
+  -
+    name: "Random"
+    description: "generated random number"
+    properties:
+      valueType: "Float64"
+      readWrite: "R"
+      defaultValue: "0.0"
+      minimum: "-2.0"
+      maximum: "2.0"
+    attributes:
+      { nodeId: "ns=3;i=1002" }
+  -
+    name: "Distance_e"
+    description: "Distance_rasp"
+    properties:
+      valueType: "Float64"
+      readWrite: "R"
+    attributes:
+      { nodeId: "ns=1;s=distance"}
+  # 각 Resource 의 값의 변화가 없는 경우에는 Redis로 전달 하지 않는다.
+  # -
+  #   name: "Distance_e"
+  #   description: "Distance_rasp"
+  #   properties:
+  #     valueType: "Float64"
+  #     readWrite: "R"
+  #   attributes:
+  #     { nodeId: "ns=1;s=distance"}
+  # -
+  #   name: "AmbientTemperature_e"
+  #   description: "Ambient Temperature_rasp"
+  #   properties:
+  #     valueType: "Float64"
+  #     readWrite: "R"
+  #   attributes:
+  #     { nodeId: "ns=1;s=ambientTemperature" }
+  # -
+  #   name: "ObjectTemperature_e"
+  #   description: "Object Temperature_rasp"
+  #   properties:
+  #     valueType: "Float64"
+  #     readWrite: "R"
+  #   attributes:
+  #     { nodeId: "ns=1;s=objectTemperature" }
+  # -
+  #   name: "Counter"
+  #   description: "generated counter number"
+  #   properties:
+  #     valueType: "Int32"
+  #     readWrite: "R"
+  #     defaultValue: "0"
+  #     minimum: "0"
+  #     maximum: "30"
+  #   attributes:
+  #     { nodeId: "ns=3;i=1001" }
+  # -
+  #   name: "Random"
+  #   description: "generated random number"
+  #   properties:
+  #     valueType: "Float64"
+  #     readWrite: "R"
+  #     defaultValue: "0.0"
+  #     minimum: "-2.0"
+  #     maximum: "2.0"
+  #   attributes:
+  #     { nodeId: "ns=3;i=1002" }
+# deviceCommands:
+#   -
+#     name: "CounterNum"
+#     isHidden: false
+#     readWrite: "R"
+#     resourceOperations:
+#       - { deviceResource: "Counter", defaultValue: "0" }
+#   -
+#     name: "RandomNum"
+#     isHidden: false
+#     readWrite: "R"
+#     resourceOperations:
+#       - { deviceResource: "Random", defaultValue: "0.0" }

@@ -1,0 +1,64 @@
+name: "keti_device"
+manufacturer: "Keti Corp."
+model: "Some 3rd party App sending numeric data"
+labels:
+ - "rest"
+description: "REST Device that sends in numeric data"
+
+deviceResources:
+  - name: distance
+    isHidden: true
+    description: "distance value"
+    properties:
+      valueType: "Float64"
+      readWrite: "R"
+      mediaType: "text/plain"
+  - name: temperature
+    isHidden: true
+    description: "temperature value"
+    properties:
+      valueType: "Float64"
+      readWrite: "R"
+      mediaType: "text/plain"
+  - name: humidity
+    isHidden: true
+    description: "humidity value"
+    properties:
+      valueType: "Float64"
+      readWrite: "R"
+      mediaType: "text/plain"
+  - name: scikit_learn_x
+    isHidden: true
+    description: "ScikitLearn Value"
+    properties:
+      valueType: "Float64"
+      readWrite: "R"
+      mediaType: "text/plain"
+  - name: scikit_learn_y
+    isHidden: true
+    description: "ScikitLearn Value"
+    properties:
+      valueType: "Float64"
+      readWrite: "R"
+      mediaType: "text/plain"
+  - name: D2334
+    isHidden: true
+    description: "idr_data Value"
+    properties:
+      valueType: "Int32"
+      readWrite: "R"
+      mediaType: "text/plain"
+  - name: D2354
+    isHidden: true
+    description: "idr_data Value"
+    properties:
+      valueType: "Int32"
+      readWrite: "R"
+      mediaType: "text/plain"
+  - name: D2384
+    isHidden: true
+    description: "idr_data Value"
+    properties:
+      valueType: "Int32"
+      readWrite: "R"
+      mediaType: "text/plain"

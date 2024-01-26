@@ -1,0 +1,17 @@
+# Pre-define Devices
+[[DeviceList]]
+  Name = 'My-Test-Device'
+  ProfileName = 'My-MQTT-Test-Device-Profile'
+  Description = 'MQTT device is created for test purpose'
+  Labels = [ 'MQTT', 'test' ]
+  [DeviceList.Protocols]
+    [DeviceList.Protocols.mqtt]
+       CommandTopic = 'CommandTopic'
+    [[DeviceList.AutoEvents]]
+       Interval = '100ms'
+       OnChange = false
+       SourceName = 'TensorflowVal'
+    [[DeviceList.AutoEvents]]
+       Interval = '1s'
+       OnChange = false
+       SourceName = 'PytorchVal'

@@ -1,0 +1,20 @@
+[[DeviceList]]
+  Name = "uart-beta"
+  ProfileName = "uart-beta-profile"
+  Description = "uart-beta"
+  [DeviceList.Protocols]
+    [DeviceList.Protocols.uart]
+      dev = "/dev/ttyUSB0"
+      baudrate = "115200"
+  [[DeviceList.AutoEvents]]
+    Interval = "500ms"
+    OnChange = false
+    SourceName = "scikit_xx"
+  [[DeviceList.AutoEvents]]
+    Interval = "500ms"
+    OnChange = false
+    SourceName = "scikit_y"
+  #[[DeviceList.AutoEvents]]
+  #  Interval = "500ms"
+  #  OnChange = false
+  #  SourceName = "Image"

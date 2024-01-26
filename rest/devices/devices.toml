@@ -1,0 +1,8 @@
+# Pre-define Devices
+[[DeviceList]]
+  Name = "keti_device"
+  ProfileName = "keti_device"
+  Description = "RESTful Device that sends in numeric data"
+  Labels = [ "rest", "numeric", "float", "int" ]
+  [DeviceList.Protocols]
+    [DeviceList.Protocols.other]

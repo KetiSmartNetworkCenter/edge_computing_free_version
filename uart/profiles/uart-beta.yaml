@@ -1,0 +1,83 @@
+apiVersion: "v2"
+name: "uart-beta-profile"
+
+# timeout 은 ms 기준
+deviceResources:
+-
+    name: "scikit_xx"
+    isHidden: false
+    description: "request scikitLearn X value"
+    attributes: { maxbytes: 128, timeout: 1000 }
+    properties:
+        valueType: "String"
+        readWrite: "R"
+-
+    name: "scikit_y"
+    isHidden: false
+    description: "request scikitLearn Y value"
+    attributes: { maxbytes: 128, timeout: 1000 }
+    properties:
+        valueType: "String"
+        readWrite: "R"
+-
+    name: "Read_UART"
+    isHidden: false
+    description: "used to read from the UART device"
+    attributes: { maxbytes: 128, timeout: 1}
+    properties:
+        valueType: "String"
+        readWrite: "R"
+-
+    name: "Write_UART"
+    isHidden: false
+    description: "used to write to the UART device"
+    attributes: { timeout: 1}
+    properties:
+        valueType: "String"
+        readWrite: "W"
+-
+    name: "Read1"
+    isHidden: false
+    description: "read1 predict value"
+    attributes: { maxbytes: 128, timeout: 1 }
+    properties:
+        valueType: "String"
+        readWrite: "R"
+-
+    name: "Read2"
+    isHidden: false
+    description: "read2 predict value"
+    attributes: { maxbytes: 128, timeout: 1 }
+    properties:
+        valueType: "String"
+        readWrite: "R"
+-
+    name: "Write1"
+    isHidden: false
+    description: "Write1 predict value"
+    attributes: { timeout: 1 }
+    properties:
+        valueType: "String"
+        readWrite: "W"
+-
+    name: "Write2"
+    isHidden: false
+    description: "read2 predict value"
+    attributes: { timeout: 1 }
+    properties:
+        valueType: "String"
+        readWrite: "W"
+
+deviceCommands:
+-
+    name: "Read1And2"
+    readWrite: "R"
+    resourceOperations:
+    - { deviceResource: "Read1" }
+    - { deviceResource: "Read2" }
+-
+    name: "Write1And2"
+    readWrite: "W"
+    resourceOperations:
+    - { deviceResource: "Write1" }
+    - { deviceResource: "Write2" }
